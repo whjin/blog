@@ -75,7 +75,7 @@ div object {
 
 .entry li,
 .viewer li {
-  margin: 0.2em auto;
+  margin: 0.5em auto;
   line-height: 1.6;
 }
 
@@ -294,7 +294,7 @@ blockquote::-webkit-scrollbar {
 }
 
 .toc-nav li {
-  margin: 0.4em auto;
+  margin: 0.5em auto;
   line-height: 1.5;
 }
 
@@ -333,7 +333,7 @@ blockquote::-webkit-scrollbar {
 
   .entry li,
   .viewer li {
-    margin: 0.2em auto;
+    margin: 0.5em auto;
     line-height: 1.6;
   }
 }
