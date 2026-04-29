@@ -1,5 +1,7 @@
 ## 子进程
 
+> - 创建 `node` 子进程用 `fork`，自带通道方便通信
+
 充分利用多核 `CPU` 的优势，用到 `child_process` 模块创建子进程，有四种方法可以创建子进程：
 
 - `exec`
@@ -101,15 +103,27 @@ setInterval(() => {
 ```js
 // 用 Node.js 创建一个 http 服务，当路由为 `compute` 时，执行一个耗时的运算
 const http = require('http');
+const { fork } = require('child_process');
 const server = http.createServer((req, res) => {});
 server.on('request', (req, res) => {
   if (req.url === '/compute') {
-    const sum = longComputation();
-    return res.end(`Sum is ${sum}`);
+    const compute = fork('./computer.js');
+    compute.send('start');
+    compute.on('message', (sum) => {
+      res.end(`Sum is ${sum}`);
+    });
   } else {
     res.end('ok');
   }
 });
 server.listen(3000);
+
+// 解决 耗时运算占用 CPU，用户其他请求被阻塞
+// 解决方案：把耗时运算放到子进程中去处理 compute.js
+process.on('message', (msg) => {
+  const sum = longComputation();
+  process.send(sum);
+});
 ```
 
+更简单的处理方式是利用 `cluster` 模块。
