@@ -75,7 +75,7 @@ div object {
 
 .entry li,
 .viewer li {
-  margin: 0.5em auto;
+  margin: 0.2em auto;
   line-height: 1.6;
 }
 
@@ -117,7 +117,7 @@ blockquote {
 blockquote p {
   margin: 0;
   text-align: justify;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 .header {
@@ -223,7 +223,7 @@ blockquote::-webkit-scrollbar {
 
 .markdown-content table th,
 .markdown-content table td {
-  padding: 6px 13px;
+  padding: 4px 12px;
   border: 1px solid #d0d7de;
 }
 
@@ -294,7 +294,7 @@ blockquote::-webkit-scrollbar {
 }
 
 .toc-nav li {
-  margin: 0.6em auto;
+  margin: 0.4em auto;
   line-height: 1.5;
 }
 
@@ -333,7 +333,7 @@ blockquote::-webkit-scrollbar {
 
   .entry li,
   .viewer li {
-    margin: 0.5em auto;
+    margin: 0.2em auto;
     line-height: 1.6;
   }
 }
