@@ -124,5 +124,101 @@ D2C 设计稿转码
 3. 中间件
    - 消息队列：`Redis`（简单场景）、`RabbitMQ`（复杂场景）
    - 缓存：`Redis`（缓存大模型响应、向量检索结果）
+   - 文件处理：`PDF` 解析（`PyPDF2`、`LangChain` 文档加载器）、`Excel` 解析（`pandas`）
 
-****
+**第四优先级：前端 `AI` 技能**
+
+- **流式输出实现**：使用 `fetch` + `ReadableStream` 实现打字机效果，处理中断与错误
+- **`AI` 交互组件**：聊天界面、文件上传、进度条、思考过程展示
+- **多模态交互**：语音输入（`Web Speech API`）、语音输出（`Web Speech Synthesis`）、图片上传与预览
+- **前端 `AI` 推理**：使用 `Transformer.js` 在浏览器中运行小模型（如 `Llama 3 8B` 量化版）
+- **`AI` 组件库**：`Vercel AI SDK`、`shadcn/ui AI` 组件、`LangChain JS`
+
+**第五优先级：工程化部署**
+
+- **容器化**：写 `Dockerfile` 和 `docker-compose.yml` 配置文件
+- **云服务**：`Vercel` （前端 + `Next.js` 全栈一键部署）
+- **模型部署**：`Ollama`（本地部署开源模型）、`vLLM` （高性能推理）
+- **监控与运维**：日志收集(`ELK Stack`)、错误监控 `Sentry`、大模型调用监控 `LangSmith`
+- **安全**：`API` 密钥管理、`Prompt` 注入防护、数据脱敏、限流与鉴权
+
+### 实战项目
+
+1. `RAG` 全流程：文档加载 -> 分块 -> 向量化 -> 向量存储 -> 检索 -> 重排序 -> 渲染生成
+2. 向量数据库：掌握 `Chroma`、`Pinecone` 的使用，理解向量检索的基本原理
+3. 函数调用：学习 `Function Calling`，能让大模型调用外部工具
+4. `FastAPI`：学习 `FastAPI`，能编写简单的 `AI` 后端服务
+5. `LangChain JS/Python`：掌握 `LangChain`的核心概念（链、工具、代理、`Memory`）
+
+### 学习资源
+
+#### 一、核心
+
+<!-- prettier-ignore-start -->
+| 学习阶段 | 技能模块 | 资源名称 | 核心内容/优势 | 访问地址 |
+|---------|---------|---------|-------------|---------|
+| **入门期（1-2个月）** | 全栈框架 | Next.js 15 App Router 官方文档 | AI应用90%后端逻辑可通过API路由/Server Actions实现，无需单独学Node.js | https://nextjs.org/docs |
+| | AI SDK | Vercel AI SDK 5.x 官方文档⭐ | 前端转AI全栈第一入口，一行代码实现多模型切换、流式输出、工具调用 | https://sdk.vercel.ai/docs |
+| | 大模型API | DeepSeek API 文档 | 国内访问速度快，完全兼容OpenAI接口，免费额度充足 | https://platform.deepseek.com/docs |
+| | 实战教程 | Vercel官方AI Chatbot模板 | 开箱即用，集成shadcn/ui、Tailwind、多模型支持，直接fork修改 | https://vercel.com/templates/next.js/ai-chatbot |
+| | | 从0到1用Vercel AI SDK实现AI对话应用 | 完整源码，包含流式输出、多轮对话、Supabase存储、Vercel部署 | https://blog.csdn.net/Zacks_xdc/article/details/158421034 |
+| | 提示工程 | DeepLearning.AI《ChatGPT Prompt Engineering for Developers》⭐ | 全球最好的提示工程入门课，1小时掌握核心技巧 | https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/ |
+| | | OpenAI官方提示工程指南 | 官方最佳实践，包含结构化提示、思维链等高级技巧 | https://platform.openai.com/docs/guides/prompt-engineering |
+| | Python基础 | 《Python for JavaScript Developers》 | 专门写给前端开发者的Python教程，对比JS语法，快速上手 | https://pythonforjsdevs.com/ |
+| **成长期（3-6个月）** | RAG核心技术 | LangChain JS 官方文档⭐ | 优先学JS版，与前端生态无缝集成，掌握文档加载、分块、检索全流程 | https://js.langchain.com/docs/ |
+| | | 从零实现RAG：企业级问答系统实战 | 完整讲解RAG全流程，包含分块优化、检索重排序、上下文管理 | https://juejin.cn/post/7507840946038751242 |
+| | | LangChain进阶：从Demo到生产级应用 | 重点讲生产环境坑点：缓存设计、错误处理、性能优化 | https://xie.infoq.cn/article/40bb7533533896540a41d563a |
+| | 向量数据库 | Chroma 官方文档 | 纯JS实现，无需额外服务，适合原型开发和个人项目 | https://docs.trychroma.com/ |
+| | | Pinecone 官方文档 | 托管云服务，无需运维，支持大规模向量检索 | https://www.pinecone.io/docs/ |
+| | | pgvector + PostgreSQL | 一库多用，在PostgreSQL基础上扩展向量能力 | https://github.com/pgvector/pgvector |
+| | 函数调用 | Vercel AI SDK 工具调用完全指南 | 用TS定义工具，自动处理参数解析和错误，比LangChain更简单 | https://sdk.vercel.ai/docs/guides/tools |
+| | | OpenAI Function Calling 官方指南 | 行业标准，掌握工具定义、多工具调用、错误处理 | https://platform.openai.com/docs/guides/function-calling |
+| | 后端基础 | FastAPI 官方教程 | Python后端首选，自动生成API文档，与LangChain无缝集成 | https://fastapi.tiangolo.com/tutorial/ |
+| | | NestJS 官方文档 | TS后端首选，前端开发者零学习成本 | https://nestjs.com/docs/ |
+| **成熟期（6-12个月）** | Agent开发 | LangGraph JS 官方文档⭐ | 目前最好的Agent框架，掌握状态管理、循环、多Agent协作 | https://langchain-ai.github.io/langgraphjs/ |
+| | | DeepLearning.AI《AI Agentic Design Patterns with AutoGen》 | 免费系统课程，掌握Agent核心设计模式 | https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/ |
+| | | 多Agent协作系统实战：CrewAI + Next.js | 完整实现产品开发团队多Agent系统，包含前后端联调 | https://www.iesdouyin.com/share/video/7559533782563310886 |
+| | 前端AI推理 | Transformers.js 官方文档⭐ | 浏览器端AI推理事实标准，支持WebGPU加速，数据不离开设备 | https://huggingface.co/docs/transformers.js/index |
+| | | Transformers.js + Llama 3 浏览器推理实战 | 在浏览器中运行Llama 3 8B量化版，实现离线聊天机器人 | https://juejin.cn/post/7536972217294127139 |
+| | | WebLLM 官方文档 | 针对大语言模型优化的浏览器推理引擎，性能更优 | https://webllm.mlc.ai/ |
+| | 大模型微调 | LlamaFactory 官方文档 | 低代码微调工具，支持一键LoRA/QLoRA微调，无需写复杂代码 | https://github.com/hiyouga/LLaMA-Factory |
+| | | DeepLearning.AI《Finetuning Large Language Models》 | 免费入门课，掌握微调的适用场景和基本流程 | https://www.deeplearning.ai/short-courses/finetuning-large-language-models/ |
+| | 工程化部署 | Ollama 官方文档⭐ | 本地部署开源模型首选，一行命令运行Llama 3、Qwen等 | https://ollama.com/docs |
+| | | Docker 入门教程 | 容器化基础，AI应用部署必备 | https://docs.docker.com/get-started/ |
+<!-- prettier-ignore-end -->
+
+#### 二、前端AI专属
+
+<!-- prettier-ignore-start -->
+| 资源类型 | 资源名称 | 核心内容/优势 | 访问地址 |
+|---------|---------|-------------|---------|
+| AI组件库 | shadcn/ui AI组件 | 包含聊天界面、文件上传、思考过程展示等常用AI组件 | https://ui.shadcn.com/components |
+| | Chatbot UI | 功能完整的开源聊天机器人界面，支持多模型、多会话、插件系统 | https://github.com/mckaywrigley/chatbot-ui |
+| | Vercel AI Templates | 包含RAG、Agent、多模态等各种AI应用模板，一键部署 | https://vercel.com/templates?category=ai |
+| 多模态交互 | Web Speech API 文档 | 浏览器原生API，实现语音输入和语音输出 | https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Speech_API |
+| | MediaPipe 官方文档 | 浏览器端实时图像、视频处理，支持手势识别、人脸检测等 | https://developers.google.com/mediapipe |
+<!-- prettier-ignore-end -->
+
+#### 三、工具与社区
+
+<!-- prettier-ignore-start -->
+| 资源类型 | 资源名称 | 核心内容/优势 | 访问地址 |
+|---------|---------|-------------|---------|
+| 开发工具 | Cursor⭐ | AI代码编辑器，内置GPT-4o，支持代码生成、重构、解释，效率提升10倍 | https://cursor.sh/ |
+| | GitHub Copilot | 代码补全工具，与VS Code无缝集成 | https://github.com/copilot |
+| | LangSmith | LangChain官方调试工具，用于调试和监控AI应用运行过程 | https://smith.langchain.com/ |
+| 社区资讯 | Hugging Face | 全球最大的AI模型社区，下载开源模型、数据集 | https://huggingface.co/ |
+| | GitHub Trending | 关注AI相关开源项目，跟进最新技术动态 | https://github.com/trending |
+| | 掘金前端AI专栏 | 国内优质前端AI技术文章聚集地 | https://juejin.cn/column/7264354086042181668 |
+| | 前端AI Weekly | 每周更新前端AI技术动态、开源项目、教程 | https://frontendaiweekly.com/ |
+<!-- prettier-ignore-end -->
+
+#### 四、书籍
+
+<!-- prettier-ignore-start -->
+| 书籍名称 | 核心内容/优势 |
+|---------|-------------|
+| 《图解大模型：生成式AI原理与实战全解析》 | 全程用图解拆概念，不用啃公式也能懂Transformer、RAG、Agent |
+| 《LangChain实战：构建大语言模型应用》 | 系统讲解LangChain核心概念和实战技巧，包含大量代码示例 |
+| 《AI全栈开发实战》（TypeScript版） | 专门针对前端开发者，用TS实现完整的AI全栈应用 |
+<!-- prettier-ignore-end -->
