@@ -56,7 +56,7 @@
     navBack.addEventListener('click', (e) => {
       e.stopPropagation();
       const origin = window.location.origin;
-      const targetUrl = productionMode() ? `${origin}/docs` : origin;
+      const targetUrl = productionMode() ? `${origin}/blog` : origin;
       window.location.href = targetUrl;
     });
   }

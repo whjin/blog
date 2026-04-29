@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "blog",
   "version": "1.0.0",
   "description": "- [博客](https://wuhuajin.com/blog)\r - [讨论站点](https://github.com/whjin/blog/issues)",
   "main": "server.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/whjin/docs.git"
+    "url": "git+https://github.com/whjin/blog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/whjin/docs/issues"
+    "url": "https://github.com/whjin/blog/issues"
   },
-  "homepage": "https://github.com/whjin/docs#readme",
+  "homepage": "https://github.com/whjin/blog#readme",
   "devDependencies": {
     "chokidar": "^5.0.0",
     "ws": "^8.20.0"
