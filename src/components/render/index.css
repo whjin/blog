@@ -80,7 +80,7 @@ div object {
 }
 
 .viewer blockquote li {
-  margin-left: -1.2em;
+  margin-left: -1.5em;
 }
 
 details {
@@ -297,6 +297,12 @@ blockquote::-webkit-scrollbar {
   padding: 0 0.5em 0 1em;
 }
 
+.viewer blockquote dl,
+.viewer blockquote ol,
+.viewer blockquote ul {
+  margin: 0;
+}
+
 .toc-nav li {
   margin: 0.5em auto;
   line-height: 1.5;
@@ -341,7 +347,13 @@ blockquote::-webkit-scrollbar {
     line-height: 1.6;
   }
 
+  .viewer blockquote dl,
+  .viewer blockquote ol,
+  .viewer blockquote ul {
+    margin: 0;
+  }
+
   .viewer blockquote li {
-    margin-left: -1.2em;
+    margin-left: -1.5em;
   }
 }
