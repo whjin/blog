@@ -1,8 +1,12 @@
 # 全栈图书管理系统
 
-> 项目地址：[node-galaxy](https://github.com/whjin/node-galaxy)
+> 项目地址：[book-management-system](https://github.com/whjin/node-galaxy/tree/master/book-management-system)
 
-> 1. 具备完整项目的需求分析和架构设计能力（独立完成简单项目的需求规划、目录结构设计、接口设计）
+> 1. 完整项目的需求分析和架构设计（需求规划、目录结构设计、接口设计）
+> 2. 后端接口开发和数据库设计（`Express` + `MongoDB` 开发接口，设计数据模型，认证授权）
+> 3. 前后端联调方法和解决跨域问题（`Apifox` 测试接口，`cors`和代理解决跨域问题）
+> 4. 项目部署流程，使用 `PM2` 管理应用进程（搭建服务器环境、上传项目、`PM2` 启动、管理项目）
+> 5. 项目优化与迭代（性能优化、功能扩展）
 
 ## 一、需求分析
 
