@@ -6,4 +6,4 @@
 
 ### `Function Calling`
 
-- [DeepSeek](/src/test/ai/function-calling.js)
+- [DeepSeek](src/test/ai/function-calling.js)
