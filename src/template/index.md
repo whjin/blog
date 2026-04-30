@@ -1,4 +1,13 @@
 <details>
+<summary>AI</summary>
+
+- [AI大模型文档](src/template/viewer.html?AI_AI大模型文档)
+- [AI前端](src/template/viewer.html?AI_AI前端)
+- [AI视频制作](src/template/viewer.html?AI_AI视频制作)
+
+</details>
+
+<details>
 <summary>TypeScript</summary>
 
 - [TypeScript与类型系统](src/template/viewer.html?TypeScript_TypeScript与类型系统)
@@ -62,14 +71,6 @@
 
 - [设计模式文档](src/template/viewer.html?JavaScript_设计模式文档)
 - [ECMAScript文档](src/template/viewer.html?JavaScript_ECMAScript文档)
-
-</details>
-
-<details>
-<summary>AI</summary>
-
-- [AI前端](src/template/viewer.html?AI_AI前端)
-- [AI视频制作](src/template/viewer.html?AI_AI视频制作)
 
 </details>
 
