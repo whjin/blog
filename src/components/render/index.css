@@ -79,6 +79,10 @@ div object {
   line-height: 1.6;
 }
 
+.viewer blockquote li {
+  margin-left: -1.2em;
+}
+
 details {
   margin: 1em 0;
 }
@@ -335,5 +339,9 @@ blockquote::-webkit-scrollbar {
   .viewer li {
     margin: 0.5em auto;
     line-height: 1.6;
+  }
+
+  .viewer blockquote li {
+    margin-left: -1.2em;
   }
 }
