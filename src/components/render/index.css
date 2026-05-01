@@ -44,6 +44,22 @@ h6 {
   font-size: 0.6em;
 }
 
+.markdown-content {
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+::-webkit-scrollbar-thumb {
+  background: #a09f9f;
+  border-radius: 6px;
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #808080;
+}
+
 ol,
 ul,
 li,
@@ -55,10 +71,6 @@ li,
 
 div object {
   display: none;
-}
-
-.markdown-content {
-  width: 100%;
 }
 
 .markdown-content canvas {
@@ -345,39 +357,10 @@ blockquote::-webkit-scrollbar {
 
   .markdown-content table {
     display: block;
-    overflow: auto;
     white-space: nowrap;
   }
 
   .sidebar-area {
     display: none;
-  }
-
-  .entry li,
-  .viewer li {
-    margin: 0.5em auto;
-    line-height: 1.6;
-  }
-
-  .viewer li strong {
-    display: inline-block;
-    margin-bottom: 0.5em;
-  }
-
-  .entry li ul,
-  .entry li ol,
-  .viewer li ul,
-  .viewer li ol {
-    margin-left: -1.5em;
-  }
-
-  .viewer blockquote dl,
-  .viewer blockquote ol,
-  .viewer blockquote ul {
-    margin: 0;
-  }
-
-  .viewer blockquote li {
-    margin-left: -1.5em;
   }
 }
