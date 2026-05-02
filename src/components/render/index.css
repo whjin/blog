@@ -85,12 +85,6 @@ div object {
   padding: 1em;
 }
 
-.entry li,
-.viewer li {
-  margin: 0.5em auto;
-  line-height: 1.6;
-}
-
 .viewer li strong {
   display: inline-block;
   margin-bottom: 0.5em;
