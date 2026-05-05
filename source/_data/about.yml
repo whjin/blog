@@ -1,0 +1,106 @@
+- class_name: 关于页
+  subtitle: 明朝即长路，惜取此时心✨
+  avatarImg: https://avatar-static.segmentfault.com/104/794/1047942597-65425fa2e1be7_huge128
+  avatarSkills:
+    left:
+      - 🤖️ 科技研究爱好者
+      - 🔍 分享与热心帮助
+      - 🏠 智能家居小能手
+      - 🔨 设计开发一条龙
+    right:
+      - 专修交互与设计 🤝
+      - 脚踏实地行动派 🏃
+      - 团队小组发动机 🧱
+      - 壮汉人狠话不多 💢
+  name: 吴华锦
+  description: 集科技和文艺于一身。
+  aboutsiteTips:
+    tips: 追求
+    title1: 源于
+    title2: 热爱而去感受
+    word:
+      - 学习
+      - 生活
+      - 程序
+      - 体验
+  helloAbout: Hello World!
+  skillsTips:
+    tips: 技能
+    title: 开启创造力
+  careers:
+    tips: 生涯
+    title: 创造价值
+    list:
+      - desc: 2020.06-至今任职于广州市高科通信技术股份有限公司，负责智能终端产品组所有产品的前端开发工作，已上线并投产运行产品包括智能终端产品线、远程提讯会见产品线、智能视频行为分析平台；负责实战平台产品组V4版本监室事务管理模块开发。
+        color: '#DD4012'
+      - desc: 主要包括管控主机、仓内屏、仓外屏、移动警务终端、监区移动终端、智能谈话一体机、信创国产化等APP应用。远程会见、远程提讯、视频行为分析等平台系统。
+        color: '#DD4012'
+      - desc: 适配昆仑电子、峰火智能、来邦科技、美电贝尔、海康、大华等设备厂商，包括音视频对讲、指纹、刷卡、测温、IO等SDK模块。
+        color: '#DD4012'
+      - desc: 负责智能终端产品需求评审、原型评审、UI评审、技术选型、项目构建、功能开发、版本发布、现场部署及上线运维等产品开发流程。参与实战平台产品组V4版本需求评审、原型评审、UI评审、监室事务管理模块开发等产品开发流程。
+        color: '#DD4012'
+      - desc: 2018.10-2020.06任职于广州市唯景互娱信息科技有限公司，负责“珠海翔翼排班系统”和“西域游-新疆旅游电子商务平台”的前端开发工作，两个项目均已完成交付上线使用。
+        color: '#0dd'
+      - desc: 解决“排班系统”月计划模块课程拖放卡顿、跨天课程数据不一致等问题，达成项目阶段性成果，获得客户一致性好评和老板奖励；完成预约、年计划以及通知中心模块开发。负责“西域游”项目技术选型、项目构建、功能开发、版本发布、远程部署及上线运维等产品开发流程。
+        color: '#0dd'
+      - desc: 2013.07-2018.03任职于深圳市共济科技股份有限公司，担任组态工程师职务，负责大中小型数据中心、机房、楼宇等场景监控系统组态设计工作。参与“南方电网”、“深交所”、“平安金融大厦”、“太平金融大厦”、“盐田港”、“建设银行”、“烟草局”等大型数据中心建设或升级改造项目。
+        color: '#357ef5'
+    img:
+  statistic:
+    link: /archives
+    text: 文章归档
+    cover: https://bu.dusays.com/2023/05/01/644f4b037b930.jpg
+  map:
+    title: 我的住址：
+    StrengthenTitle: 中国，广州市，荔湾区
+    background: https://s1.imagehub.cc/images/2026/03/18/753eb15b210a7a586615bd0f4680f62f.md.webp
+    backgroundDark: https://s1.imagehub.cc/images/2026/03/18/9224323daa7b5ac25a859e03a6c15408.md.jpeg
+  selfInfo:
+    selfInfoTips1: 毕业于
+    selfInfoContentYear: 2013
+    selfInfoTips2: 深圳大学
+    selfInfoContent2: 电子信息
+    selfInfoTips3: 现在职业
+    selfInfoContent3: 攻城狮
+  personalities:
+    author_name: 我的电话：
+    personality_type: 13927419410
+    author_email: 我的邮箱：
+    emial_address: wuhuajin09@163.com
+    photo_url: https://s1.imagehub.cc/images/2026/03/18/9224323daa7b5ac25a859e03a6c15408.md.jpeg
+    personality_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/ESFJ-A.svg
+    name_url: https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC
+  maxim:
+    maxim_tips: 座右铭
+    maxim_top: 明朝即长路，
+    maxim_bottom: 惜取此时心。
+  buff:
+    buff_tips: 特长
+    buff_top: 脑回路新奇的 酸菜鱼
+    buff_bottom: 二次元指数 MAX
+  game:
+    game_tips: 爱好技术
+    game_title: 前端
+    game_uid: 产品开发
+    game_bg: https://s1.imagehub.cc/images/2025/05/10/40acb611009b8ef86dea6dfea881475b.md.webp
+  comic:
+    comic_tips: 爱好写作
+    comic_title: 诗词
+    comic_list:
+      - name: 古典文学
+        href: https://wuhuajin.com/blog
+        cover: https://s1.imagehub.cc/images/2026/02/11/19d8f6912c4622629b8a365257a430b1.md.png
+  like:
+    like_tips: 关注偏好
+    like_title: 数码科技
+    like_bg: https://bu.dusays.com/2022/12/06/638f5f05ce1f7.jpg
+    like_bottom: 手机、电脑软硬件
+  music:
+    music_tips: 音乐偏好
+    music_title: 许嵩、民谣、华语流行
+    music_bg: https://p2.music.126.net/Mrg1i7DwcwjWBvQPIMt_Mg==/79164837213438.jpg
+    music_link: /music
+  reward_list:
+    - name:
+      amount:
+      datatime:

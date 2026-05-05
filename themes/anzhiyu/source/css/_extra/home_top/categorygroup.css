@@ -1,0 +1,1492 @@
+/* 首页分类框展示 - 核心布局样式 */
+.categoryGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 200px;
+  height: 24%;
+  width: 100%;
+  animation: slide-in 0.6s 0.2s backwards;
+}
+
+.categoryItem {
+  width: calc(100% / 3 - 0.33rem);
+  height: 100%;
+  margin-right: 0.5rem;
+}
+
+.categoryItem {
+  overflow: hidden;
+  transform: scale(1);
+  transition: all 0.8s cubic-bezier(0.65, 0.15, 0.37, 1.19);
+  height: 100%;
+  border-radius: 12px;
+}
+
+a.categoryButton {
+  height: 100%;
+  width: 100%;
+  background: var(--anzhiyu-card-bg);
+  border-radius: 12px;
+  display: inline-block;
+  text-align: left;
+  line-height: 4em;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--anzhiyu-white);
+  transition: all 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transform: scale(1);
+  overflow: hidden;
+  font-family: inherit;
+  position: relative;
+  /* 修复伪元素定位问题 */
+}
+
+.categoryButtonText {
+  padding-left: 21px;
+}
+
+a.categoryButton svg,
+a.categoryButton i {
+  font-size: 5rem;
+  opacity: 0.2;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  transition: 0.3s;
+  width: 100px;
+  text-align: center;
+  filter: blur(2px);
+  transform: scale(1) rotate(15deg);
+}
+
+/* ===================== 基础颜色（原有） ===================== */
+a.categoryButton.blue {
+  /* 蓝色 */
+  background: linear-gradient(to right, #358bff, #15c6ff);
+  background-size: 200%;
+}
+
+a.categoryButton.red {
+  /* 红色 */
+  background: linear-gradient(to right, #f65, #ffbf37);
+  background-size: 200%;
+}
+
+a.categoryButton.green {
+  /* 绿色 */
+  background: linear-gradient(to right, #18e7ae, #1eebeb);
+  background-size: 200%;
+}
+
+/* ===================== 保留的深色系CSS命名颜色（普通主题） ===================== */
+a.categoryButton.aqua {
+  /* 水绿色/青绿色 */
+  background: linear-gradient(to right, aqua, #40e0d0);
+  background-size: 200%;
+}
+
+a.categoryButton.aquamarine {
+  /* 碧绿色 */
+  background: linear-gradient(to right, aquamarine, #66cdaa);
+  background-size: 200%;
+}
+
+a.categoryButton.black {
+  /* 黑色 */
+  background: linear-gradient(to right, black, #333333);
+  background-size: 200%;
+}
+
+a.categoryButton.blueviolet {
+  /* 蓝紫色 */
+  background: linear-gradient(to right, blueviolet, #9370db);
+  background-size: 200%;
+}
+
+a.categoryButton.brown {
+  /* 棕色 */
+  background: linear-gradient(to right, brown, #d2691e);
+  background-size: 200%;
+}
+
+a.categoryButton.burlywood {
+  /* 原木色 */
+  background: linear-gradient(to right, burlywood, #deb887);
+  background-size: 200%;
+}
+
+a.categoryButton.cadetblue {
+  /* 军蓝色/灰蓝色 */
+  background: linear-gradient(to right, cadetblue, #5f9ea0);
+  background-size: 200%;
+}
+
+a.categoryButton.chartreuse {
+  /* 查特酒绿/黄绿 */
+  background: linear-gradient(to right, chartreuse, #7fff00);
+  background-size: 200%;
+}
+
+a.categoryButton.chocolate {
+  /* 巧克力色 */
+  background: linear-gradient(to right, chocolate, #cd853f);
+  background-size: 200%;
+}
+
+a.categoryButton.coral {
+  /* 珊瑚色 */
+  background: linear-gradient(to right, coral, #ff7f50);
+  background-size: 200%;
+}
+
+a.categoryButton.cornflowerblue {
+  /* 矢车菊蓝 */
+  background: linear-gradient(to right, cornflowerblue, #6495ed);
+  background-size: 200%;
+}
+
+a.categoryButton.crimson {
+  /* 绯红/深红 */
+  background: linear-gradient(to right, crimson, #dc143c);
+  background-size: 200%;
+}
+
+a.categoryButton.cyan {
+  /* 青色/蓝绿色 */
+  background: linear-gradient(to right, cyan, #00ffff);
+  background-size: 200%;
+}
+
+a.categoryButton.darkblue {
+  /* 深蓝色 */
+  background: linear-gradient(to right, darkblue, #00008b);
+  background-size: 200%;
+}
+
+a.categoryButton.darkcyan {
+  /* 深青色 */
+  background: linear-gradient(to right, darkcyan, #008b8b);
+  background-size: 200%;
+}
+
+a.categoryButton.darkgoldenrod {
+  /* 深金菊色 */
+  background: linear-gradient(to right, darkgoldenrod, #b8860b);
+  background-size: 200%;
+}
+
+a.categoryButton.darkgray {
+  /* 深灰色 */
+  background: linear-gradient(to right, darkgray, #a9a9a9);
+  background-size: 200%;
+}
+
+a.categoryButton.darkgreen {
+  /* 深绿色 */
+  background: linear-gradient(to right, darkgreen, #006400);
+  background-size: 200%;
+}
+
+a.categoryButton.darkgrey {
+  /* 深灰色（英式拼写） */
+  background: linear-gradient(to right, darkgrey, #a9a9a9);
+  background-size: 200%;
+}
+
+a.categoryButton.darkkhaki {
+  /* 深卡其色 */
+  background: linear-gradient(to right, darkkhaki, #bdb76b);
+  background-size: 200%;
+}
+
+a.categoryButton.darkmagenta {
+  /* 深品红 */
+  background: linear-gradient(to right, darkmagenta, #8b008b);
+  background-size: 200%;
+}
+
+a.categoryButton.darkolivegreen {
+  /* 深橄榄绿 */
+  background: linear-gradient(to right, darkolivegreen, #556b2f);
+  background-size: 200%;
+}
+
+a.categoryButton.darkorange {
+  /* 深橙色 */
+  background: linear-gradient(to right, darkorange, #ff8c00);
+  background-size: 200%;
+}
+
+a.categoryButton.darkorchid {
+  /* 深兰花紫 */
+  background: linear-gradient(to right, darkorchid, #9932cc);
+  background-size: 200%;
+}
+
+a.categoryButton.darkred {
+  /* 深红色 */
+  background: linear-gradient(to right, darkred, #8b0000);
+  background-size: 200%;
+}
+
+a.categoryButton.darksalmon {
+  /* 深三文鱼色/深鲑鱼色 */
+  background: linear-gradient(to right, darksalmon, #e9967a);
+  background-size: 200%;
+}
+
+a.categoryButton.darkseagreen {
+  /* 深海绿色 */
+  background: linear-gradient(to right, darkseagreen, #8fbc8f);
+  background-size: 200%;
+}
+
+a.categoryButton.darkslateblue {
+  /* 深石板蓝 */
+  background: linear-gradient(to right, darkslateblue, #483d8b);
+  background-size: 200%;
+}
+
+a.categoryButton.darkslategray {
+  /* 深石板灰 */
+  background: linear-gradient(to right, darkslategray, #2f4f4f);
+  background-size: 200%;
+}
+
+a.categoryButton.darkslategrey {
+  /* 深石板灰（英式拼写） */
+  background: linear-gradient(to right, darkslategrey, #2f4f4f);
+  background-size: 200%;
+}
+
+a.categoryButton.darkturquoise {
+  /* 深绿松石色 */
+  background: linear-gradient(to right, darkturquoise, #00ced1);
+  background-size: 200%;
+}
+
+a.categoryButton.darkviolet {
+  /* 深紫罗兰色 */
+  background: linear-gradient(to right, darkviolet, #9400d3);
+  background-size: 200%;
+}
+
+a.categoryButton.deeppink {
+  /* 深粉色 */
+  background: linear-gradient(to right, deeppink, #ff1493);
+  background-size: 200%;
+}
+
+a.categoryButton.deepskyblue {
+  /* 深天蓝色 */
+  background: linear-gradient(to right, deepskyblue, #00bfff);
+  background-size: 200%;
+}
+
+a.categoryButton.dimgray {
+  /* 暗灰色 */
+  background: linear-gradient(to right, dimgray, #696969);
+  background-size: 200%;
+}
+
+a.categoryButton.dimgrey {
+  /* 暗灰色（英式拼写） */
+  background: linear-gradient(to right, dimgrey, #696969);
+  background-size: 200%;
+}
+
+a.categoryButton.dodgerblue {
+  /* 道奇蓝 */
+  background: linear-gradient(to right, dodgerblue, #1e90ff);
+  background-size: 200%;
+}
+
+a.categoryButton.firebrick {
+  /* 耐火砖红 */
+  background: linear-gradient(to right, firebrick, #b22222);
+  background-size: 200%;
+}
+
+a.categoryButton.forestgreen {
+  /* 森林绿 */
+  background: linear-gradient(to right, forestgreen, #228b22);
+  background-size: 200%;
+}
+
+a.categoryButton.fuchsia {
+  /* 品红/紫红 */
+  background: linear-gradient(to right, fuchsia, #ff00ff);
+  background-size: 200%;
+}
+
+a.categoryButton.gold {
+  /* 金色 */
+  background: linear-gradient(to right, gold, #daa520);
+  background-size: 200%;
+}
+
+a.categoryButton.goldenrod {
+  /* 金菊色/金棒色 */
+  background: linear-gradient(to right, goldenrod, #daa520);
+  background-size: 200%;
+}
+
+a.categoryButton.gray {
+  /* 灰色 */
+  background: linear-gradient(to right, gray, #808080);
+  background-size: 200%;
+}
+
+a.categoryButton.greenyellow {
+  /* 绿黄色 */
+  background: linear-gradient(to right, greenyellow, #adff2f);
+  background-size: 200%;
+}
+
+a.categoryButton.grey {
+  /* 灰色（英式拼写） */
+  background: linear-gradient(to right, grey, #808080);
+  background-size: 200%;
+}
+
+a.categoryButton.hotpink {
+  /* 艳粉色/亮粉 */
+  background: linear-gradient(to right, hotpink, #ff69b4);
+  background-size: 200%;
+}
+
+a.categoryButton.Indianred {
+  /* 印第安红 */
+  background: linear-gradient(to right, indianred, #cd5c5c);
+  background-size: 200%;
+}
+
+a.categoryButton.indigo {
+  /* 靛蓝色 */
+  background: linear-gradient(to right, indigo, #4b0082);
+  background-size: 200%;
+}
+
+a.categoryButton.khaki {
+  /* 卡其色 */
+  background: linear-gradient(to right, khaki, #f0e68c);
+  background-size: 200%;
+}
+
+a.categoryButton.lawngreen {
+  /* 草坪绿 */
+  background: linear-gradient(to right, lawngreen, #7cfc00);
+  background-size: 200%;
+}
+
+a.categoryButton.lightblue {
+  /* 浅蓝色（保留，对比度足够） */
+  background: linear-gradient(to right, lightblue, #add8e6);
+  background-size: 200%;
+}
+
+a.categoryButton.lightcoral {
+  /* 浅珊瑚色（保留，对比度足够） */
+  background: linear-gradient(to right, lightcoral, #f08080);
+  background-size: 200%;
+}
+
+a.categoryButton.lightcyan {
+  /* 浅青色（保留，对比度足够） */
+  background: linear-gradient(to right, lightcyan, #e0ffff);
+  background-size: 200%;
+}
+
+a.categoryButton.lightgreen {
+  /* 浅绿色（保留，对比度足够） */
+  background: linear-gradient(to right, lightgreen, #90ee90);
+  background-size: 200%;
+}
+
+a.categoryButton.lightpink {
+  /* 浅粉色（保留，对比度足够） */
+  background: linear-gradient(to right, lightpink, #ffb6c1);
+  background-size: 200%;
+}
+
+a.categoryButton.lightsalmon {
+  /* 浅三文鱼色（保留，对比度足够） */
+  background: linear-gradient(to right, lightsalmon, #ffa07a);
+  background-size: 200%;
+}
+
+a.categoryButton.lightseagreen {
+  /* 浅海绿色 */
+  background: linear-gradient(to right, lightseagreen, #20b2aa);
+  background-size: 200%;
+}
+
+a.categoryButton.lightskyblue {
+  /* 浅天蓝色 */
+  background: linear-gradient(to right, lightskyblue, #87cefa);
+  background-size: 200%;
+}
+
+a.categoryButton.lightslategray {
+  /* 浅石板灰 */
+  background: linear-gradient(to right, lightslategray, #778899);
+  background-size: 200%;
+}
+
+a.categoryButton.lightslategrey {
+  /* 浅石板灰（英式拼写） */
+  background: linear-gradient(to right, lightslategrey, #778899);
+  background-size: 200%;
+}
+
+a.categoryButton.lightsteelblue {
+  /* 浅钢蓝色 */
+  background: linear-gradient(to right, lightsteelblue, #b0c4de);
+  background-size: 200%;
+}
+
+a.categoryButton.lime {
+  /* 酸橙绿 */
+  background: linear-gradient(to right, lime, #00ff00);
+  background-size: 200%;
+}
+
+a.categoryButton.limegreen {
+  /* 酸橙绿色 */
+  background: linear-gradient(to right, limegreen, #32cd32);
+  background-size: 200%;
+}
+
+a.categoryButton.magenta {
+  /* 品红色 */
+  background: linear-gradient(to right, magenta, #ff00ff);
+  background-size: 200%;
+}
+
+a.categoryButton.maroon {
+  /* 栗色/褐红色 */
+  background: linear-gradient(to right, maroon, #800000);
+  background-size: 200%;
+}
+
+a.categoryButton.mediumaquamarine {
+  /* 中碧绿色 */
+  background: linear-gradient(to right, mediumaquamarine, #66cdaa);
+  background-size: 200%;
+}
+
+a.categoryButton.mediumblue {
+  /* 中蓝色 */
+  background: linear-gradient(to right, mediumblue, #0000cd);
+  background-size: 200%;
+}
+
+a.categoryButton.mediumorchid {
+  /* 中兰花紫 */
+  background: linear-gradient(to right, mediumorchid, #ba55d3);
+  background-size: 200%;
+}
+
+a.categoryButton.mediumpurple {
+  /* 中紫色 */
+  background: linear-gradient(to right, mediumpurple, #9370db);
+  background-size: 200%;
+}
+
+a.categoryButton.mediumseagreen {
+  /* 中海绿色 */
+  background: linear-gradient(to right, mediumseagreen, #3cb371);
+  background-size: 200%;
+}
+
+a.categoryButton.mediumslateblue {
+  /* 中石板蓝 */
+  background: linear-gradient(to right, mediumslateblue, #7b68ee);
+  background-size: 200%;
+}
+
+a.categoryButton.mediumspringgreen {
+  /* 中春绿色 */
+  background: linear-gradient(to right, mediumspringgreen, #00fa9a);
+  background-size: 200%;
+}
+
+a.categoryButton.mediumturquoise {
+  /* 中绿松石色 */
+  background: linear-gradient(to right, mediumturquoise, #48d1cc);
+  background-size: 200%;
+}
+
+a.categoryButton.mediumvioletred {
+  /* 中紫罗兰红 */
+  background: linear-gradient(to right, mediumvioletred, #c71585);
+  background-size: 200%;
+}
+
+a.categoryButton.midnightblue {
+  /* 午夜蓝 */
+  background: linear-gradient(to right, midnightblue, #191970);
+  background-size: 200%;
+}
+
+a.categoryButton.navy {
+  /* 藏青色/海军蓝 */
+  background: linear-gradient(to right, navy, #000080);
+  background-size: 200%;
+}
+
+a.categoryButton.olive {
+  /* 橄榄色 */
+  background: linear-gradient(to right, olive, #808000);
+  background-size: 200%;
+}
+
+a.categoryButton.olivedrab {
+  /* 橄榄褐 */
+  background: linear-gradient(to right, olivedrab, #6b8e23);
+  background-size: 200%;
+}
+
+a.categoryButton.orange {
+  /* 橙色 */
+  background: linear-gradient(to right, orange, #ffa500);
+  background-size: 200%;
+}
+
+a.categoryButton.orangered {
+  /* 橙红色 */
+  background: linear-gradient(to right, orangered, #ff4500);
+  background-size: 200%;
+}
+
+a.categoryButton.orchid {
+  /* 兰花紫 */
+  background: linear-gradient(to right, orchid, #da70d6);
+  background-size: 200%;
+}
+
+a.categoryButton.palegreen {
+  /* 浅绿色/淡绿（保留，对比度足够） */
+  background: linear-gradient(to right, palegreen, #98fb98);
+  background-size: 200%;
+}
+
+a.categoryButton.paleturquoise {
+  /* 浅绿松石色（保留，对比度足够） */
+  background: linear-gradient(to right, paleturquoise, #afeeee);
+  background-size: 200%;
+}
+
+a.categoryButton.palevioletred {
+  /* 浅紫罗兰红 */
+  background: linear-gradient(to right, palevioletred, #db7093);
+  background-size: 200%;
+}
+
+a.categoryButton.peru {
+  /* 秘鲁色/浅棕 */
+  background: linear-gradient(to right, peru, #cd853f);
+  background-size: 200%;
+}
+
+a.categoryButton.pink {
+  /* 粉色（保留，对比度足够） */
+  background: linear-gradient(to right, pink, #ffc0cb);
+  background-size: 200%;
+}
+
+a.categoryButton.plum {
+  /* 李子色/深紫 */
+  background: linear-gradient(to right, plum, #dda0dd);
+  background-size: 200%;
+}
+
+a.categoryButton.powderblue {
+  /* 粉末蓝/浅灰蓝（保留，对比度足够） */
+  background: linear-gradient(to right, powderblue, #b0e0e6);
+  background-size: 200%;
+}
+
+a.categoryButton.purple {
+  /* 紫色 */
+  background: linear-gradient(to right, purple, #800080);
+  background-size: 200%;
+}
+
+a.categoryButton.rebeccapurple {
+  /* 丽贝卡紫 */
+  background: linear-gradient(to right, rebeccapurple, #663399);
+  background-size: 200%;
+}
+
+a.categoryButton.rosybrown {
+  /* 玫瑰棕 */
+  background: linear-gradient(to right, rosybrown, #bc8f8f);
+  background-size: 200%;
+}
+
+a.categoryButton.royalblue {
+  /* 皇家蓝/宝蓝 */
+  background: linear-gradient(to right, royalblue, #4169e1);
+  background-size: 200%;
+}
+
+a.categoryButton.saddlebrown {
+  /* 马鞍棕 */
+  background: linear-gradient(to right, saddlebrown, #8b4513);
+  background-size: 200%;
+}
+
+a.categoryButton.salmon {
+  /* 三文鱼色/鲑鱼色 */
+  background: linear-gradient(to right, salmon, #fa8072);
+  background-size: 200%;
+}
+
+a.categoryButton.sandybrown {
+  /* 沙棕色 */
+  background: linear-gradient(to right, sandybrown, #f4a460);
+  background-size: 200%;
+}
+
+a.categoryButton.seagreen {
+  /* 海绿色 */
+  background: linear-gradient(to right, seagreen, #2e8b57);
+  background-size: 200%;
+}
+
+a.categoryButton.sienna {
+  /* 赭石色/深棕红 */
+  background: linear-gradient(to right, sienna, #a0522d);
+  background-size: 200%;
+}
+
+a.categoryButton.silver {
+  /* 银色（保留，对比度足够） */
+  background: linear-gradient(to right, silver, #c0c0c0);
+  background-size: 200%;
+}
+
+a.categoryButton.skyblue {
+  /* 天蓝色 */
+  background: linear-gradient(to right, skyblue, #87ceeb);
+  background-size: 200%;
+}
+
+a.categoryButton.slateblue {
+  /* 石板蓝 */
+  background: linear-gradient(to right, slateblue, #6a5acd);
+  background-size: 200%;
+}
+
+a.categoryButton.slategray {
+  /* 石板灰 */
+  background: linear-gradient(to right, slategray, #708090);
+  background-size: 200%;
+}
+
+a.categoryButton.slategrey {
+  /* 石板灰（英式拼写） */
+  background: linear-gradient(to right, slategrey, #708090);
+  background-size: 200%;
+}
+
+a.categoryButton.springgreen {
+  /* 春绿色 */
+  background: linear-gradient(to right, springgreen, #00ff7f);
+  background-size: 200%;
+}
+
+a.categoryButton.steelblue {
+  /* 钢蓝色 */
+  background: linear-gradient(to right, steelblue, #4682b4);
+  background-size: 200%;
+}
+
+a.categoryButton.tan {
+  /* 棕褐色/茶色 */
+  background: linear-gradient(to right, tan, #d2b48c);
+  background-size: 200%;
+}
+
+a.categoryButton.teal {
+  /* 水鸭色/青绿色 */
+  background: linear-gradient(to right, teal, #008080);
+  background-size: 200%;
+}
+
+a.categoryButton.thistle {
+  /* 蓟花色/浅紫 */
+  background: linear-gradient(to right, thistle, #d8bfd8);
+  background-size: 200%;
+}
+
+a.categoryButton.tomato {
+  /* 番茄红 */
+  background: linear-gradient(to right, tomato, #ff6347);
+  background-size: 200%;
+}
+
+a.categoryButton.turquoise {
+  /* 绿松石色 */
+  background: linear-gradient(to right, turquoise, #40e0d0);
+  background-size: 200%;
+}
+
+a.categoryButton.violet {
+  /* 紫罗兰色 */
+  background: linear-gradient(to right, violet, #ee82ee);
+  background-size: 200%;
+}
+
+a.categoryButton.yellow {
+  /* 黄色（保留，已单独适配文字色） */
+  background: linear-gradient(to right, yellow, #ffff00);
+  background-size: 200%;
+  color: #333 !important;
+}
+
+a.categoryButton.yellowgreen {
+  /* 黄绿色 */
+  background: linear-gradient(to right, yellowgreen, #9acd32);
+  background-size: 200%;
+}
+
+/* ===================== 交互样式 ===================== */
+.categoryItem:hover {
+  width: 50%;
+}
+
+.categoryItem:hover svg,
+.categoryItem:hover i {
+  opacity: 0.8;
+  transition: 0.8s;
+  transition-delay: 0.15s;
+  transform: scale(1.03) translateY(-50%);
+  font-size: 2.5rem;
+  filter: blur(0);
+  top: 50%;
+}
+
+a.categoryButton:after {
+  top: 47px;
+  width: 1rem;
+  left: 21px;
+  height: 2px;
+  background: var(--anzhiyu-white);
+  content: '';
+  border-radius: 1px;
+  position: absolute;
+}
+
+/* 仅保留黄色按钮的伪元素颜色适配（其他浅色系已移除） */
+a.categoryButton.yellow:after {
+  background: #333 !important;
+}
+
+/* ===================== 响应式隐藏 ===================== */
+@media screen and (max-width: 768px) {
+  .categoryGroup {
+    display: none;
+  }
+}
+
+/* ===================== 深色主题 - 保留的颜色适配 ===================== */
+[data-theme='dark'] a.categoryButton.blue {
+  /* 蓝色（深色） */
+  background: linear-gradient(to right, #0653b8, #2fcbff);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.red {
+  /* 红色（深色） */
+  background: linear-gradient(to right, #e22a16, #da980c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.green {
+  /* 绿色（深色） */
+  background: linear-gradient(to right, #099e74, #0ea4a4);
+  background-size: 200%;
+}
+
+/* 保留颜色的深色主题适配（带中文注释） */
+[data-theme='dark'] a.categoryButton.aqua {
+  /* 水绿色（深色） */
+  background: linear-gradient(to right, #00cccc, #006666);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.aquamarine {
+  /* 碧绿色（深色） */
+  background: linear-gradient(to right, #45b898, #0a5c42);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.black {
+  /* 黑色（深色） */
+  background: linear-gradient(to right, #111111, #444444);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.blueviolet {
+  /* 蓝紫色（深色） */
+  background: linear-gradient(to right, #7050b0, #3a2060);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.brown {
+  /* 棕色（深色） */
+  background: linear-gradient(to right, #a05010, #502808);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.burlywood {
+  /* 原木色（深色） */
+  background: linear-gradient(to right, #b89867, #5c4a2e);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.cadetblue {
+  /* 军蓝色（深色） */
+  background: linear-gradient(to right, #4a8080, #1a3030);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.chartreuse {
+  /* 查特酒绿（深色） */
+  background: linear-gradient(to right, #5fcc00, #2a6600);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.chocolate {
+  /* 巧克力色（深色） */
+  background: linear-gradient(to right, #aa652f, #553014);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.coral {
+  /* 珊瑚色（深色） */
+  background: linear-gradient(to right, #d96030, #662a14);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.cornflowerblue {
+  /* 矢车菊蓝（深色） */
+  background: linear-gradient(to right, #4a75c0, #1a3060);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.crimson {
+  /* 绯红（深色） */
+  background: linear-gradient(to right, #b01028, #5c0814);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.cyan {
+  /* 青色（深色） */
+  background: linear-gradient(to right, #00cccc, #006666);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkblue {
+  /* 深蓝色（深色） */
+  background: linear-gradient(to right, #00006b, #000030);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkcyan {
+  /* 深青色（深色） */
+  background: linear-gradient(to right, #006b6b, #003030);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkgoldenrod {
+  /* 深金菊色（深色） */
+  background: linear-gradient(to right, #986608, #503004);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkgray {
+  /* 深灰色（深色） */
+  background: linear-gradient(to right, #888888, #444444);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkgreen {
+  /* 深绿色（深色） */
+  background: linear-gradient(to right, #004400, #002000);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkgrey {
+  /* 深灰色（深色，英式） */
+  background: linear-gradient(to right, #888888, #444444);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkkhaki {
+  /* 深卡其色（深色） */
+  background: linear-gradient(to right, #989048, #4a4624);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkmagenta {
+  /* 深品红（深色） */
+  background: linear-gradient(to right, #6b006b, #300030);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkolivegreen {
+  /* 深橄榄绿（深色） */
+  background: linear-gradient(to right, #35481f, #1a240f);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkorange {
+  /* 深橙色（深色） */
+  background: linear-gradient(to right, #d96c00, #663600);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkorchid {
+  /* 深兰花紫（深色） */
+  background: linear-gradient(to right, #7820aa, #3c1055);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkred {
+  /* 深红色（深色） */
+  background: linear-gradient(to right, #6b0000, #300000);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darksalmon {
+  /* 深三文鱼色（深色） */
+  background: linear-gradient(to right, #c0785c, #663c2e);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkseagreen {
+  /* 深海绿色（深色） */
+  background: linear-gradient(to right, #6f986f, #2a402a);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkslateblue {
+  /* 深石板蓝（深色） */
+  background: linear-gradient(to right, #30286b, #181436);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkslategray {
+  /* 深石板灰（深色） */
+  background: linear-gradient(to right, #1f3030, #0f1818);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkslategrey {
+  /* 深石板灰（深色，英式） */
+  background: linear-gradient(to right, #1f3030, #0f1818);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkturquoise {
+  /* 深绿松石色（深色） */
+  background: linear-gradient(to right, #00a8b0, #005458);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.darkviolet {
+  /* 深紫罗兰色（深色） */
+  background: linear-gradient(to right, #7000b0, #380058);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.deeppink {
+  /* 深粉色（深色） */
+  background: linear-gradient(to right, #d01078, #66083c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.deepskyblue {
+  /* 深天蓝色（深色） */
+  background: linear-gradient(to right, #0098d0, #004a66);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.dimgray {
+  /* 暗灰色（深色） */
+  background: linear-gradient(to right, #484848, #242424);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.dimgrey {
+  /* 暗灰色（深色，英式） */
+  background: linear-gradient(to right, #484848, #242424);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.dodgerblue {
+  /* 道奇蓝（深色） */
+  background: linear-gradient(to right, #1070d0, #083866);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.firebrick {
+  /* 耐火砖红（深色） */
+  background: linear-gradient(to right, #901818, #480c0c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.forestgreen {
+  /* 森林绿（深色） */
+  background: linear-gradient(to right, #106810, #083008);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.fuchsia {
+  /* 品红（深色） */
+  background: linear-gradient(to right, #d000d0, #660066);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.gold {
+  /* 金色（深色） */
+  background: linear-gradient(to right, #b88508, #664804);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.goldenrod {
+  /* 金菊色（深色） */
+  background: linear-gradient(to right, #b88508, #664804);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.gray {
+  /* 灰色（深色） */
+  background: linear-gradient(to right, #606060, #303030);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.greenyellow {
+  /* 绿黄色（深色） */
+  background: linear-gradient(to right, #88d010, #446608);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.grey {
+  /* 灰色（深色，英式） */
+  background: linear-gradient(to right, #606060, #303030);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.hotpink {
+  /* 艳粉色（深色） */
+  background: linear-gradient(to right, #d04890, #662448);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.Indianred {
+  /* 印第安红（深色） */
+  background: linear-gradient(to right, #aa4848, #552424);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.indigo {
+  /* 靛蓝色（深色） */
+  background: linear-gradient(to right, #30006b, #180036);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.khaki {
+  /* 卡其色（深色） */
+  background: linear-gradient(to right, #d0c06c, #665c36);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lawngreen {
+  /* 草坪绿（深色） */
+  background: linear-gradient(to right, #5cc800, #2a6600);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightblue {
+  /* 浅蓝色（深色） */
+  background: linear-gradient(to right, #88b8d0, #445c66);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightcoral {
+  /* 浅珊瑚色（深色） */
+  background: linear-gradient(to right, #d06060, #663030);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightcyan {
+  /* 浅青色（深色） */
+  background: linear-gradient(to right, #c0e8e8, #5c6666);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightgreen {
+  /* 浅绿色（深色） */
+  background: linear-gradient(to right, #70c070, #386638);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightpink {
+  /* 浅粉色（深色） */
+  background: linear-gradient(to right, #d098a0, #664c50);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightsalmon {
+  /* 浅三文鱼色（深色） */
+  background: linear-gradient(to right, #d08058, #66402c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightseagreen {
+  /* 浅海绿色（深色） */
+  background: linear-gradient(to right, #109088, #084844);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightskyblue {
+  /* 浅天蓝色（深色） */
+  background: linear-gradient(to right, #67b0d0, #335866);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightslategray {
+  /* 浅石板灰（深色） */
+  background: linear-gradient(to right, #586878, #2c343c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightslategrey {
+  /* 浅石板灰（深色，英式） */
+  background: linear-gradient(to right, #586878, #2c343c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lightsteelblue {
+  /* 浅钢蓝色（深色） */
+  background: linear-gradient(to right, #90a4c0, #485460);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.lime {
+  /* 酸橙绿（深色） */
+  background: linear-gradient(to right, #00cc00, #006600);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.limegreen {
+  /* 酸橙绿色（深色） */
+  background: linear-gradient(to right, #20b820, #0c580c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.magenta {
+  /* 品红色（深色） */
+  background: linear-gradient(to right, #d000d0, #660066);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.maroon {
+  /* 栗色（深色） */
+  background: linear-gradient(to right, #600000, #300000);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.mediumaquamarine {
+  /* 中碧绿色（深色） */
+  background: linear-gradient(to right, #45b898, #0a5c42);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.mediumblue {
+  /* 中蓝色（深色） */
+  background: linear-gradient(to right, #0000aa, #000055);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.mediumorchid {
+  /* 中兰花紫（深色） */
+  background: linear-gradient(to right, #9845b0, #4c2058);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.mediumpurple {
+  /* 中紫色（深色） */
+  background: linear-gradient(to right, #7050b0, #3a2060);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.mediumseagreen {
+  /* 中海绿色（深色） */
+  background: linear-gradient(to right, #2a9058, #14482c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.mediumslateblue {
+  /* 中石板蓝（深色） */
+  background: linear-gradient(to right, #5a48c0, #2c2466);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.mediumspringgreen {
+  /* 中春绿色（深色） */
+  background: linear-gradient(to right, #00d078, #00663c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.mediumturquoise {
+  /* 中绿松石色（深色） */
+  background: linear-gradient(to right, #30b8b0, #185c58);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.mediumvioletred {
+  /* 中紫罗兰红（深色） */
+  background: linear-gradient(to right, #a81068, #580834);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.midnightblue {
+  /* 午夜蓝（深色） */
+  background: linear-gradient(to right, #101050, #080828);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.navy {
+  /* 藏青色（深色） */
+  background: linear-gradient(to right, #000060, #000030);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.olive {
+  /* 橄榄色（深色） */
+  background: linear-gradient(to right, #606000, #303000);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.olivedrab {
+  /* 橄榄褐（深色） */
+  background: linear-gradient(to right, #4a6810, #253408);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.orange {
+  /* 橙色（深色） */
+  background: linear-gradient(to right, #d08000, #664000);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.orangered {
+  /* 橙红色（深色） */
+  background: linear-gradient(to right, #d03000, #661800);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.orchid {
+  /* 兰花紫（深色） */
+  background: linear-gradient(to right, #b850b0, #5c2858);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.palegreen {
+  /* 浅绿色（深色） */
+  background: linear-gradient(to right, #78d878, #3c663c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.paleturquoise {
+  /* 浅绿松石色（深色） */
+  background: linear-gradient(to right, #8ec0c0, #445858);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.palevioletred {
+  /* 浅紫罗兰红（深色） */
+  background: linear-gradient(to right, #b85078, #5c283c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.peru {
+  /* 秘鲁色（深色） */
+  background: linear-gradient(to right, #aa652f, #553014);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.pink {
+  /* 粉色（深色） */
+  background: linear-gradient(to right, #d0a0b0, #665058);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.plum {
+  /* 李子色（深色） */
+  background: linear-gradient(to right, #b888b8, #5c445c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.powderblue {
+  /* 粉末蓝（深色） */
+  background: linear-gradient(to right, #90c0c0, #485858);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.purple {
+  /* 紫色（深色） */
+  background: linear-gradient(to right, #600060, #300030);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.rebeccapurple {
+  /* 丽贝卡紫（深色） */
+  background: linear-gradient(to right, #482066, #241033);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.rosybrown {
+  /* 玫瑰棕（深色） */
+  background: linear-gradient(to right, #986868, #4c3434);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.royalblue {
+  /* 皇家蓝（深色） */
+  background: linear-gradient(to right, #3048c0, #182466);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.saddlebrown {
+  /* 马鞍棕（深色） */
+  background: linear-gradient(to right, #6b3008, #361804);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.salmon {
+  /* 三文鱼色（深色） */
+  background: linear-gradient(to right, #d06050, #663028);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.sandybrown {
+  /* 沙棕色（深色） */
+  background: linear-gradient(to right, #d08040, #664020);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.seagreen {
+  /* 海绿色（深色） */
+  background: linear-gradient(to right, #1e6840, #0f3420);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.sienna {
+  /* 赭石色（深色） */
+  background: linear-gradient(to right, #803018, #40180c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.silver {
+  /* 银色（深色） */
+  background: linear-gradient(to right, #a0a0a0, #505050);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.skyblue {
+  /* 天蓝色（深色） */
+  background: linear-gradient(to right, #67a0c0, #334858);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.slateblue {
+  /* 石板蓝（深色） */
+  background: linear-gradient(to right, #4a3ac0, #241a66);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.slategray {
+  /* 石板灰（深色） */
+  background: linear-gradient(to right, #506070, #283038);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.slategrey {
+  /* 石板灰（深色，英式） */
+  background: linear-gradient(to right, #506070, #283038);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.springgreen {
+  /* 春绿色（深色） */
+  background: linear-gradient(to right, #00d058, #00662c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.steelblue {
+  /* 钢蓝色（深色） */
+  background: linear-gradient(to right, #306088, #183044);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.tan {
+  /* 棕褐色（深色） */
+  background: linear-gradient(to right, #b09068, #584834);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.teal {
+  /* 水鸭色（深色） */
+  background: linear-gradient(to right, #006060, #003030);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.thistle {
+  /* 蓟花色（深色） */
+  background: linear-gradient(to right, #b898b8, #5c4c5c);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.tomato {
+  /* 番茄红（深色） */
+  background: linear-gradient(to right, #d04028, #662014);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.turquoise {
+  /* 绿松石色（深色） */
+  background: linear-gradient(to right, #30c0b0, #185854);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.violet {
+  /* 紫罗兰色（深色） */
+  background: linear-gradient(to right, #c860c8, #663066);
+  background-size: 200%;
+}
+
+[data-theme='dark'] a.categoryButton.yellow {
+  /* 黄色（深色） */
+  background: linear-gradient(to right, #e8e800, #666600);
+  background-size: 200%;
+  color: #fff !important;
+}
+
+[data-theme='dark'] a.categoryButton.yellowgreen {
+  /* 黄绿色（深色） */
+  background: linear-gradient(to right, #78a818, #3c540c);
+  background-size: 200%;
+}
+
+/* 深色主题下黄色按钮伪元素适配 */
+[data-theme='dark'] a.categoryButton.yellow:after {
+  background: #fff !important;
+}

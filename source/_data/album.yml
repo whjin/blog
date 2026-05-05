@@ -1,0 +1,41 @@
+- class_name: 世界各地夕阳与风景
+  path_name: /wordScenery
+  type: 2
+  description: 因为到不了世界各地，所以请网友们发来了各地的夕阳与风景🌇。
+  cover: https://bu.dusays.com/2023/04/09/64329399d1175.jpg
+  top_background: https://s1.imagehub.cc/images/2026/03/18/9224323daa7b5ac25a859e03a6c15408.md.jpeg
+  rowHeight: 220
+  limit: 10
+  lazyload: true
+  btnLazyload: false
+  url: false
+  top_link: /album
+  top_btn_text: 返回
+  album_list:
+    - date: 2022/10/26 01:00:00
+      content: 湘潭的一角。
+      address: 湖南湘潭
+      from: 再吃一口就减肥
+      image:
+        - https://bu.dusays.com/2023/04/09/64329399db122.webp
+    - date: 2022-10-25
+      content: 洛阳暴雨后的天空。
+      address: 河南洛阳
+      from: 紫菜卷
+      image:
+        - https://bu.dusays.com/2023/04/09/64329399db122.webp
+        - https://bu.dusays.com/2023/04/09/64329399db2e1.webp
+
+- class_name: 我的日常
+  path_name: /dailyPhoto
+  type: 1
+  description: 这里存放的是有关我自己的一些沙雕生活与有趣的事情。
+  top_link: /album
+  top_btn_text: 返回
+  top_background: https://s1.imagehub.cc/images/2026/03/18/9224323daa7b5ac25a859e03a6c15408.md.jpeg
+  cover: https://bu.dusays.com/2023/04/09/64329399cea5a.webp
+  album_list:
+    - date: 2022-10-24
+      content: 老妹的画
+      image:
+        - https://bu.dusays.com/2023/04/09/643293997b92b.jpeg

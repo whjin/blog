@@ -1,0 +1,60 @@
+- title: 即刻短文
+  subTitle: 浮生半日闲
+  tips: 随时随地，分享生活
+  buttonText: 关于我
+  buttonLink: /about/
+  limit: 30
+  home_essay: true
+  top_background: https://s1.imagehub.cc/images/2026/03/18/3146463db5cf001020bfefa7d0e1585d.md.jpg
+  essay_list:
+    - content: 天高云淡，望断南飞雁。不到长城非好汉，屈指行程二万。六盘山上高峰，红旗漫卷西风。今日长缨在手，何日缚住苍龙。
+      date: 2026/03/17 16:19:05
+    - content: 现在盛行“养虾”热，各大厂商都在抢客户，八仙过海，各显神通。
+      date: 2026/03/11 21:42:17
+    - content: 今天完成简历第一版，部署上线。
+      link: https://wuhuajin.com/blog/resume/
+      link_title: 我的简历
+      date: 2026/02/28 16:38:36
+    - content: 江流碧水载浮沉，茂竹疏影两闲人。
+      date: 2026/02/22 15:50:10
+    - content: 新春快乐
+      date: 2026/02/22
+    - content: 国足又输了，水平还是不行啊！！！
+      date: 2026/01/31
+    - content: 安知鱼主题指南
+      date: 2023/09/09
+      video:
+        - https://player.bilibili.com/player.html?aid=226886152&bvid=BV1Ch41137tR&cid=1081639816&p=1&autoplay=0
+    - content: 支持了Accesskey快捷键，可以直接按下shift + ?组合键以查看快捷键选项。
+      date: 2023/07/01
+      video:
+        - https://cdn.jsdelivr.net/npm/anzhiyu-blog-static@1.0.0/video/%E9%A3%8E%E8%BD%A6%E6%A0%B7%E5%BC%8F%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88.mp4
+      image:
+        - https://img02.anheyu.com/adminuploads/1/2023/07/01/64a033cb2c21e.webp!blogimg
+      address: 长沙
+      from: 安知鱼
+      link: /posts/e140.html
+    - content: 关于页的打赏仿了b站的充电功能，使用svg绘图➕一些动画参数移动，应该不会被b站警告吧😜，另外文章也支持了顶部随机b站同款春秋冬banner。
+      date: 2022/12/18
+    - content: 把页脚, 首页顶部全都魔改到本地了, 方便后续魔改, 音乐也改成胶囊的样式了, 其实还是想让胶囊可拖拽, 不可点击改变歌词位置的, 但是弄了半天都没弄好就放弃了
+      date: 2022/11/13
+    - content: 搜索🔍支持缩略图显示啦（默认获取文章内容的第一张图片）
+      date: 2022/10/23 08:00:00
+      from: 安知鱼
+    - content: 遇见彩虹🌈吃定彩虹
+      date: 2022/10/23 10:00:00
+      image:
+        - https://bu.dusays.com/2023/04/09/64329399e285d.webp
+        - https://bu.dusays.com/2023/04/09/64329399aa3bc.webp
+        - https://bu.dusays.com/2023/04/09/6432939996dd7.webp
+    - content: 妹妹强制要求我买走了她的两幅画 -¥30
+      date: 2022/10/02
+      image:
+        - https://bu.dusays.com/2023/04/09/643293997b92b.jpeg
+    - content: 歌曲推荐
+      date: 2022/09/25
+      aplayer:
+        server: tencent
+        id: 001FGQba3i10mw
+    - content: 做了一个噩梦, 梦到从楼顶坠下去了。😷
+      date: 2022/09/24
