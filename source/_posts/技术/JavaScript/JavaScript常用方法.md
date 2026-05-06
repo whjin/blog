@@ -309,7 +309,7 @@ async function request() {
 # 按键处理方法
 
 ```javascript
-window.addEventListener('keydown', (e) => {
+window.addEventListener('keydown', e => {
   let container = document.querySelector('#container');
   let { key, keyCode, code } = e;
   let template = '';
@@ -326,7 +326,7 @@ window.addEventListener('keydown', (e) => {
       title: 'e.code',
       content: code,
     },
-  ].forEach((item) => {
+  ].forEach(item => {
     template += `<div class="key"><small>${item.title}</small>${item.content}</div>`;
   });
   container.innerHTML = template;
@@ -422,8 +422,8 @@ export default {
 
 ```javascript
 const images = document.querySelectorAll('img');
-const callback = (entries) => {
-  entries.forEach((entry) => {
+const callback = entries => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
       const image = entry.target;
       const data_src = image.getAttribute('data-src');
@@ -433,7 +433,7 @@ const callback = (entries) => {
   });
 };
 const observer = new IntersectionObserver(callback);
-images.forEach((image) => {
+images.forEach(image => {
   observer.observe(image);
 });
 ```
@@ -596,6 +596,6 @@ function queryURLParams(url) {
 
 ```javascript
 const flatten = function (arr) {
-  return [].concat(...arr.map((v) => (Array.isArray(v) ? flatten(v) : v)));
+  return [].concat(...arr.map(v => (Array.isArray(v) ? flatten(v) : v)));
 };
 ```
