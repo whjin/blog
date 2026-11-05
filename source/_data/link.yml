@@ -3,7 +3,7 @@
   hundredSuffix: ''
   link_list:
     - name: Hexo
-      link: https://wuhuajin.com/blog
+      link: https://blog.wuhuajin.com
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 快速、简单且强大的网站框架
     - name: anzhiyu主题
@@ -17,7 +17,7 @@
   hundredSuffix: ''
   link_list:
     - name: 吴华锦
-      link: https://wuhuajin.com/blog
+      link: https://blog.wuhuajin.com
       avatar: https://s1.imagehub.cc/images/2026/04/09/d91a17b11ee6bd3f93c9c16a79108f36.md.png
       descr: 生活明朗，万物可爱
       siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg
@@ -30,7 +30,7 @@
   hundredSuffix: ''
   link_list:
     - name: 吴华锦
-      link: https://wuhuajin.com/blog
+      link: https://blog.wuhuajin.com
       avatar: https://s1.imagehub.cc/images/2026/04/09/d91a17b11ee6bd3f93c9c16a79108f36.md.png
       descr: 生活明朗，万物可爱
       recommend: true

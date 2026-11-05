@@ -30,10 +30,10 @@ nav:
     - title: 网页
       item:
         - name: 博客
-          link: https://whjin.github.io/
+          link: https://blog.wuhuajin.com/
           icon: /img/favicon.ico
         - name: 个人主页
-          link: https://whjin.github.io/
+          link: https://wuhuajin.com/
           icon: /img/favicon.ico
         - name: GITHUB
           link: https://github.com/whjin/
@@ -518,7 +518,7 @@ footer:
             link: /copyright/
   footerBar:
     enable: true
-    authorLink: https://whjin.github.io/vexo/
+    authorLink: https://blog.wuhuajin.com/
     cc:
       enable: true
       link: /copyright

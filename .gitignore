@@ -1,4 +1,6 @@
 .DS_Store
+._*
+.AppleDouble
 Thumbs.db
 db.json
 *.log
