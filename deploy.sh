@@ -48,13 +48,19 @@ if [ ! -d "./node_modules/hexo" ]; then
 fi
 
 # ========== 1. 清理 .git 内 macOS 元数据 ==========
-# 只清 .git/ 下的 ._*——这是 non-monotonic index 的直接原因。
+# 清主仓库 .git/ 和 hexo deploy 缓存仓库 .deploy_git/.git/ 下的 ._*——
+# 这是 non-monotonic index 的直接原因（exFAT 上 macOS 会给 pack 文件生成 AppleDouble 副本）。
 # 工作区的 ._* / .DS_Store 已被 .gitignore 忽略，不影响 git 和 hexo，无需每次遍历。
 step "1/3 清理 .git 内 macOS 元数据"
 t0=${SECONDS}
 clean_git=$(find .git -name "._*" -print -delete 2>/dev/null | wc -l | tr -d ' ' || echo 0)
-if [ "${clean_git}" -gt 0 ]; then
-  info "已清理 .git 内 ${clean_git} 个 ._* 文件"
+clean_deploy=0
+if [ -d ".deploy_git/.git" ]; then
+  clean_deploy=$(find .deploy_git/.git -name "._*" -print -delete 2>/dev/null | wc -l | tr -d ' ' || echo 0)
+fi
+total_clean=$((clean_git + clean_deploy))
+if [ "${total_clean}" -gt 0 ]; then
+  info "已清理 ${total_clean} 个 ._* 文件（主仓库 ${clean_git} + deploy 缓存 ${clean_deploy}）"
 else
   info ".git 内无冗余元数据"
 fi
