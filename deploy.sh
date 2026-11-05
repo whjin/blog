@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 #
-# Blog 一键部署脚本
+# Blog 一键部署脚本（优化版）
 # 流程：
-#   1. 清理 macOS 元数据（._* AppleDouble / .DS_Store）——exFAT 移动硬盘上 git 报
-#      "non-monotonic index .git/objects/pack/._pack-*.idx" 的根因
+#   1. 清理 .git 内 macOS 元数据（._* AppleDouble）——non-monotonic index 的根因
 #   2. 读取 Commit.md，提交源码到 dev 分支并 push
-#   3. hexo clean → generate → deploy，把静态站推到 GitHub main 分支
+#   3. hexo generate → deploy，把静态站推到 GitHub main 分支
+#
+# 日常部署默认不跑 hexo clean（增量生成，快很多）。
+# 如果改了主题配置、删了文章或样式异常，手动跑一次：hexo clean && bash Deploy.sh
 #
 # 使用：bash Deploy.sh   或双击 Deploy.command
 #
@@ -18,19 +20,21 @@ cd "${SCRIPT_DIR}"
 SOURCE_BRANCH="dev"
 COMMIT_FILE="Commit.md"
 DEFAULT_MESSAGE="提交更新"
-TIME_THRESHOLD=600  # 提交信息有效期 10 分钟（秒），超时则回退默认信息
+TIME_THRESHOLD=600  # 提交信息有效期 10 分钟（秒）
 
 # ========== 颜色 ==========
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
 BLUE='\033[0;34m'
+GRAY='\033[0;90m'
 NC='\033[0m'
 
 info()  { echo -e "${GREEN}[INFO]${NC} $1"; }
 step()  { echo -e "\n${BLUE}========== $1 ==========${NC}"; }
 warn()  { echo -e "${YELLOW}[WARN]${NC} $1"; }
 error() { echo -e "${RED}[ERROR]${NC} $1"; }
+elapsed() { echo -e "${GRAY}    ⏱ 耗时 $(( SECONDS - t0 ))s${NC}"; }
 
 # ========== 0. 前置检查 ==========
 if ! git rev-parse --is-inside-work-tree &>/dev/null; then
@@ -43,45 +47,36 @@ if [ ! -d "./node_modules/hexo" ]; then
   exit 1
 fi
 
-# ========== 1. 清理 macOS 冗余元数据 ==========
-step "1/3 清理 macOS 元数据（._* / .DS_Store）"
-
-# 工作区（排除 node_modules / .git，避免遍历耗时）
-clean_wt=$(find . \( -name "._*" -o -name ".DS_Store" \) \
-  -not -path "./node_modules/*" -not -path "./.git/*" \
-  -print -delete 2>/dev/null | wc -l | tr -d ' ' || echo 0)
-
-# .git 内部（non-monotonic index 的直接原因）
+# ========== 1. 清理 .git 内 macOS 元数据 ==========
+# 只清 .git/ 下的 ._*——这是 non-monotonic index 的直接原因。
+# 工作区的 ._* / .DS_Store 已被 .gitignore 忽略，不影响 git 和 hexo，无需每次遍历。
+step "1/3 清理 .git 内 macOS 元数据"
+t0=${SECONDS}
 clean_git=$(find .git -name "._*" -print -delete 2>/dev/null | wc -l | tr -d ' ' || echo 0)
-
-# .deploy_git（hexo deploy 的缓存仓库）和 themes 嵌套仓库
-[ -d ".deploy_git" ] && find .deploy_git \( -name "._*" -o -name ".DS_Store" \) -print -delete 2>/dev/null >/dev/null || true
-[ -d "themes" ]      && find themes -name "._*" -print -delete 2>/dev/null >/dev/null || true
-
-total=$((clean_wt + clean_git))
-if [ "${total}" -gt 0 ]; then
-  info "已清理 ${total} 个 macOS 元数据文件"
+if [ "${clean_git}" -gt 0 ]; then
+  info "已清理 .git 内 ${clean_git} 个 ._* 文件"
 else
-  info "无冗余元数据"
+  info ".git 内无冗余元数据"
 fi
+elapsed
 
 # ========== 2. 提交源码到 dev 分支 ==========
 step "2/3 提交源码到 ${SOURCE_BRANCH} 分支"
+t0=${SECONDS}
 
-# 2.1 读取 Commit.md（兼容旧格式：第一行可带 YYYY-MM-DD HH:MM:SS 时间戳）
+# 2.1 读取 Commit.md
 [ -f "${COMMIT_FILE}" ] || touch "${COMMIT_FILE}"
 latest_commit_line=$(sed '/^[[:space:]]*$/d' "${COMMIT_FILE}" | head -n 1 || true)
 commit_timestamp_str=$(echo "${latest_commit_line}" | grep -oE '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}' || true)
 
 if [[ -n "${commit_timestamp_str}" ]]; then
   latest_commit=$(echo "${latest_commit_line}" | sed "s/^${commit_timestamp_str}//" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
-  # macOS BSD date 解析时间戳；超时则丢弃该提交信息
   commit_ts=$(date -j -f "%Y-%m-%d %H:%M:%S" "${commit_timestamp_str}" +%s 2>/dev/null || echo "")
   if [[ -n "${commit_ts}" ]]; then
     now_ts=$(date +%s)
     diff=$(( now_ts - commit_ts )); diff=${diff#-}
     if [[ ${diff} -gt ${TIME_THRESHOLD} ]]; then
-      warn "Commit.md 记录已超时（${diff}s > ${TIME_THRESHOLD}s），使用默认信息"
+      warn "Commit.md 记录已超时（${diff}s），使用默认信息"
       latest_commit=""
     fi
   fi
@@ -98,7 +93,7 @@ if [[ "${CURRENT_BRANCH}" != "${SOURCE_BRANCH}" ]]; then
   git checkout "${SOURCE_BRANCH}"
 fi
 
-# 2.3 拉取远程（已清过 .git 内 ._*，不会再 non-monotonic index）
+# 2.3 拉取远程
 info "拉取 origin/${SOURCE_BRANCH}..."
 git pull --no-rebase --quiet origin "${SOURCE_BRANCH}" 2>&1 || warn "pull 失败，继续本地提交"
 
@@ -114,21 +109,26 @@ if ! git diff --cached --quiet; then
 else
   info "无文件变更，跳过提交"
 fi
+elapsed
 
 # ========== 3. Hexo 生成并部署到 main 分支 ==========
 step "3/3 Hexo 生成并部署到 main 分支"
 
-info "清理 Hexo 缓存（hexo clean）..."
-npx hexo clean 2>&1 | tail -3
-
-info "生成静态文件（hexo generate）..."
+# 3.1 增量生成（不跑 hexo clean，日常部署快很多）
+#     如果改了主题配置/删了文章/样式异常，手动 hexo clean 后再跑本脚本
+info "生成静态文件（hexo generate，增量）..."
+t0=${SECONDS}
 npx hexo generate 2>&1 | tail -5
+elapsed
 
-# 生成后再清一次 public 里的元数据，避免被 deploy 带到 main 分支
+# 3.2 清 public 里的 macOS 元数据（防止被 deploy 带到 main 分支）
 [ -d "public" ] && find public \( -name "._*" -o -name ".DS_Store" \) -delete 2>/dev/null || true
 
+# 3.3 部署
 info "部署到 GitHub main 分支（hexo deploy）..."
+t0=${SECONDS}
 npx hexo deploy 2>&1 | tail -5
+elapsed
 
 echo ""
 info "🎉 全部完成！"
